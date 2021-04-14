@@ -141,4 +141,18 @@ font-size: 16px;
   .form-login a:hover {
     text-decoration: underline;
   }
+  
+  .disciplinas_card {
+    margin-top: 30px;
+  }
 
+  .disciplinas_card>div {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .dj_figure{
+    margin-top: 30px;
+  }
