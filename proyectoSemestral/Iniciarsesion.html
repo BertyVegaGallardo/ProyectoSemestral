@@ -2,11 +2,12 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Formulario Login</title>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <link rel="stylesheet" href="css/mystyle.css?e">
-   
+    <link rel='stylesheet' type='text/css' media='screen' href="css/mystyle.css?eu">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-
 
     <link rel='stylesheet' type='text/css' media='screen' href='css/mystyle.css'>
 </head>
@@ -53,10 +54,30 @@
   <section class="form-login">
     <body class="inicio_Sesion"></body>
       <h5>Inicio de Sesión </h5>
-      <input class="controls" type="text" name="usuario" value="" placeholder="Usuario">
-      <input class="controls" type="password" name="contrasena" value="" placeholder="Contraseña">
-      <input class="buttons" type="submit" name="" value="Ingresar">
-      <p><a href="#">¿Olvidaste tu Contraseña?</a></p>
+        <form id="formulario">
+            <div class="mb-4">
+              
+              <input class="form-control" type="email" name="Correo" id="txtCorreo" aria-describedby="correoHelp" placeholder="Correo">
+              
+            </div>
+
+            <div class="alert alert-danger" role="alert" id="msgErrorCorreo">
+              <label class="form-label" id="textoErrorCorreo"></label>
+            </div>
+
+            <div class="mb-4">
+              <label for="txtContrasenia"></label> <i class="fa fa-eye" id="show"></i>
+              <input class="form-control" type="password" name="txtContrasenia" id="txtContrasenia" aria-describedby="contraseniaHelp" placeholder="Contraseña">
+              
+            </div>
+            <div class="alert alert-danger" role="alert" id="msgErrorContrasenia">
+              <label class="form-label" id="textoErrorContrasenia"></label>
+            </div>
+            <div class="mb-3" style="padding-bottom: 10px;">
+              <button type="submit" class="btn btn-primary" id="btnEnviar">Ingresar</button>
+            </div>
+            <p><a href="#">¿Olvidaste tu Contraseña?</a></p>
+        </form>
 
     </section>
     <footer >
@@ -65,6 +86,59 @@
       </div>
 
     </footer>
-  </body>
+
+<div id="modalValidacion" class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Errores</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+    
+          </div>
+      </div>
+  </div>
+</div>
+
+<!--<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js " integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin=" anonymous "></script>!-->
+<script src="js/query-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
+<script src= "js/Registrarse.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+      $("#msgErrorCorreo").hide();
+      $("#msgErrorContrasenia").hide();
+
+      $("#btnEnviar").click(function() {
+          var retorno = true;
+          var correo = $("#txtCorreo").val();
+          var contrasenia = $("#txtContrasenia").val();
+
+          if (correo.trim() <= 0) {
+              $("#msgErrorCorreo").show();
+              $("#textoErrorCorreo").text("El campo Correo no debe quedar vacio")
+              retorno = false;
+          } else {
+              $("#msgErrorCorreo").hide();
+          }
+
+          if (contrasenia.trim() <= 0) {
+              $("#msgErrorContrasenia").show();
+              $("#textoErrorContrasenia").text("El campo Contraseña no debe quedar vacio")
+              retorno = false;
+          } else {
+              $("#msgErrorContrasenia").hide();
+          }
+
+          return retorno;
+
+      });
+  });
+</script>
+</body>
   
 </html>
