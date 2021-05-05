@@ -119,7 +119,7 @@
           </div>
           <div class="modal-body">
               <div class="alert alert-danger" role="alert" id="msgModalErrorNombre">
-                  <label class="form-label" id="txtModalErrorNombre"></label>
+                  <label class="form-label" id="textoModalErrorNombre"></label>
               </div>
           </div>
           <div class="modal-footer">
@@ -135,6 +135,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
 <script src="js/main.js"></script>
+<script src="https://kit.fontawesome.com/2eed096b29.js" crossorigin="anonymous"></script>
 <script src= "js/Registrarse.js"></script>
 
 <script type="text/javascript">
@@ -168,7 +169,7 @@
 
           if (nombre.trim() <= 0) {
               $("#msgErrorNombre").show();
-              $("#textoErrorNombre").text("el campo nombre debe estar lleno")
+              $("#textoErrorNombre").text("El campo nombre debe estar lleno")
               $("#textoModalErrorNombre").text("Campo obligatorio");
               $("#modalValidacion").modal("show");
               retorno = false;
@@ -178,7 +179,7 @@
 
           if (apellido.trim() <= 0) {
               $("#msgErrorApellido").show();
-              $("#textoErrorApellido").text("el campo apellido debe estar lleno")
+              $("#textoErrorApellido").text("El campo apellido debe estar lleno")
               retorno = false;
           } else {
               $("#msgErrorApellido").hide();
@@ -186,7 +187,7 @@
 
           if (correo.trim() <= 0) {
               $("#msgErrorCorreo").show();
-              $("#textoErrorCorreo").text("el campo Correo debe estar lleno")
+              $("#textoErrorCorreo").text("El campo Correo debe estar lleno")
               retorno = false;
           } else {
               $("#msgErrorCorreo").hide();
@@ -194,7 +195,7 @@
 
           if (contrasenia.trim() <= 0) {
               $("#msgErrorContrasenia").show();
-              $("#textoErrorContrasenia").text("el campo Contraseña debe estar lleno")
+              $("#textoErrorContrasenia").text("El campo Contraseña debe estar lleno")
               retorno = false;
           } else {
               $("#msgErrorContrasenia").hide();

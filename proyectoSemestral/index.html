@@ -54,6 +54,20 @@
           </header>
 
         <div class="container-fluid">
+          <div class="row" style="margin-left: 280px; margin-top: 10px;">
+            <div class="card" style="width: 20rem;" >
+              <div class="card-header">
+                <span><img src="img/imagenes/bandera-icon.png" width="15rem;"> Valor Dolar Americano (USD): <span id="valor"> </span> CLP <img src="img/imagenes/banderachile-icon.png" width="15rem;"> </span>
+                </div>
+
+              </div>
+              <div class="card" style="width:25rem;">
+                <div class="card-header">
+                <span><img src="img/imagenes/update-icon.png" width="15rem;"> Ultima actualización: <span id="lastUpdate"></span></span>
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="row">
                 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
@@ -241,9 +255,25 @@
                           <p><span class="titulo-localizacion"> Avenida Antonio Varas 2410, Providencia</span></p>
                       </div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js " integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin=" anonymous "></script>
+    <!--<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js " integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin=" anonymous "></script>!-->
+    <script src="js/main.js"></script>
+    <script src="js/query-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    <script>
+      $(document).ready(function(){
+          $.get("https://api.gael.cloud/general/public/monedas/USD", 
+          function(data){
+            console.log(JSON.stringify(data));
+            console.log(data.Valor);
+            $("#nombreMoneda").text(data.Nombre);
+            $("#moneda").text(data.Codigo);
+            $("#valor").text(data.Valor);
+            $("#lastUpdate").text(data.Fecha);
+          });
+
+      });
+    </script>
 </body>
 
 </html>
